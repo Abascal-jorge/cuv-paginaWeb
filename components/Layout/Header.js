@@ -6,7 +6,8 @@ const Navegacion = styled.header`
     letter-spacing: 1px;
     /*position: fixed;
     width: 100%;*/
-    background-color: rgba(252, 238, 206, .1);
+    background-color: rgba(252, 238, 206);
+    opacity: .5;
     
     .items-nav{
         display: flex;

@@ -11,24 +11,45 @@ const BannerPrincipal = styled.div`
     background-position: center;
     background-size: cover;
     height: 80vh;
+    //margin-top: -6%;
 
-    div{
-        color: white;
+    .contenedor div{
+        color: rgba(14, 47, 111);
+        letter-spacing: 1px;
+        font-weight: bold;
         border-radius: 16px;
         padding: 15px;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(191, 125, 47, .6);
     }
+
+    .contenedor div button{
+        color: white;
+        outline: none;
+        appearance: none;
+        padding: 10px;
+        border: 2px solid crimson;
+        background-color: crimson;
+        letter-spacing: 1px;
+        font-weight: bold;
+        &:hover{
+            background: none;
+            color: rgba(14, 47, 111);
+        }
+    }
+    
 `;
 
 const Banner = () => {
     return (  
         <BannerPrincipal className="banner">
-            <div>
-                <p>
-                    Ven y conoce nuestras instalaciones, de igual manera puedes reservar
-                    o agendar una cita para conocer nuestras instalaciones.
-                </p>
-                <button>Conocenos mas</button>
+            <div className="contenedor">
+                <div>
+                    <p>
+                        Ven y conoce nuestras instalaciones, de igual manera puedes reservar
+                        o agendar una cita para conocer nuestras instalaciones.
+                    </p>
+                    <button>Conocenos mas</button>
+                </div>
             </div>
         </BannerPrincipal>
     );

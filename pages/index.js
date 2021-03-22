@@ -9,13 +9,15 @@
 */
 import Layout from "../components/Layout/layout";
 import Banner from "../components/Layout/Banner";
+import Informacion from "../components/Section/Informacion/informacion";
 
 export default function Home() {
   return (
     <>
       <Layout>
         <Banner/>
-         <h1>Hola mundo</h1>
+        <Informacion/>
+        <h1>Hola mundo</h1>
          <h1>Hola mundo</h1>
          <h1>Hola mundo</h1>
          <h1>Hola mundo</h1>

@@ -4,10 +4,9 @@ import styled from "@emotion/styled";
 
 const Navegacion = styled.header`
     letter-spacing: 1px;
-    /*position: fixed;
-    width: 100%;*/
-    background-color: rgba(252, 238, 206);
-    opacity: .5;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(252, 238, 206, .7);
     
     .items-nav{
         display: flex;
@@ -23,7 +22,7 @@ const Navegacion = styled.header`
         }
 
         nav{
-            transition: all .2s ease-in;
+            transition: all .2s ease-in-out;
         }
 
         nav ul{
@@ -37,8 +36,10 @@ const Navegacion = styled.header`
         }
 
         nav ul li a{
+            color: rgba(14, 47, 111);
             display: block;
             padding: 10px;
+            font-weight: bold;
         }
 
         i{
@@ -67,7 +68,8 @@ const Navegacion = styled.header`
             nav.active{
                 text-align: center;
                 width: 100%;
-                height: 100vh;
+                height: 60vh;
+                margin: 0 -20px;
                 background-color: black;
                 color: white;
                 padding-top: 80px;
@@ -104,6 +106,16 @@ const Header = () => {
             logo.classList.add("active");
         }
     }
+
+    /*
+    window.onscroll = (  ) => {
+        const header = document.querySelector("header");
+        if( scrollY > 100 ){
+            header.classList.add("scrollActive");
+        }else{
+            header.classList.remove("scrollActive");
+        }
+    }*/
 
     return ( 
         <Navegacion>

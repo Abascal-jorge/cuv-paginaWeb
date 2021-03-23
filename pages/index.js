@@ -1,12 +1,5 @@
-//import Head from 'next/head'
+import Head from 'next/head'
 //import styles from '../styles/Home.module.css'
-
-/*
-<Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-*/
 import Layout from "../components/Layout/layout";
 import Banner from "../components/Layout/Banner";
 import Informacion from "../components/Section/Informacion/informacion";
@@ -14,6 +7,9 @@ import Informacion from "../components/Section/Informacion/informacion";
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Centro Universitario Vallodolid</title>
+      </Head>
       <Layout>
         <Banner/>
         <Informacion/>

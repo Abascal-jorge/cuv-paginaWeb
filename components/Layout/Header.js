@@ -7,6 +7,8 @@ const Navegacion = styled.header`
     position: fixed;
     width: 100%;
     background-color: rgba(252, 238, 206, .7);
+    border: 1px solid red;
+    z-index: 10;
     
     .items-nav{
         display: flex;

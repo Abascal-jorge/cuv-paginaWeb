@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "rgba(252, 238, 206)",
     },
     img: {
-      height: 255,
+      maxheight: 255,
       maxWidth: 400,
       overflow: 'hidden',
       display: 'block',
@@ -55,9 +55,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Slider = () => {
-
     const classes = useStyles();
-    console.log( classes );
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const maxSteps = tutorialSteps.length;

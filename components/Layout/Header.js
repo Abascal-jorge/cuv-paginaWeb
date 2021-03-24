@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link'
 import styled from "@emotion/styled";
 
@@ -109,15 +109,16 @@ const Header = () => {
         }
     }
 
-    /*
-    window.onscroll = (  ) => {
-        const header = document.querySelector("header");
-        if( scrollY > 100 ){
-            header.classList.add("scrollActive");
-        }else{
-            header.classList.remove("scrollActive");
+    useEffect( () => {
+        window.onscroll = (  ) => {
+            const header = document.querySelector("header");
+            if( scrollY > 100 ){
+                header.classList.add("scrollActive");
+            }else{
+                header.classList.remove("scrollActive");
+            }
         }
-    }*/
+    }, []);
 
     return ( 
         <Navegacion>
@@ -127,8 +128,8 @@ const Header = () => {
                 </div>
                 <nav id="nav-menu">
                     <ul>
-                        <li><Link href="#">Inicio</Link></li>
-                        <li><Link href="#">Nosotros</Link></li>
+                        <li><Link href="/">Inicio</Link></li>
+                        <li><Link href="/nosotros">Nosotros</Link></li>
                         <li><Link href="#">Oferta Educativa</Link></li>
                         <li><Link href="#">Departamentos Esatudiantiles</Link></li>
                         <li><Link href="#">Galería</Link></li>

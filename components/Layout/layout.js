@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "./Header";
+import Footer from "../footer/footer";
 
 
 const Layout = ( { children }) => {
@@ -12,9 +13,7 @@ const Layout = ( { children }) => {
                     { children }
                 </main>
 
-                <footer className="footer">
-                    <p>JORGE ABASCAL LOPEZ</p>
-                </footer>
+                <Footer/>
             </div>
         </>
      );

@@ -112,7 +112,7 @@ const Header = () => {
     useEffect( () => {
         window.onscroll = (  ) => {
             const header = document.querySelector("header");
-            if( scrollY > 100 ){
+            if( scrollY > 40 ){
                 header.classList.add("scrollActive");
             }else{
                 header.classList.remove("scrollActive");

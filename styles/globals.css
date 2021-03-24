@@ -57,6 +57,7 @@ header.scrollActive{
 /*Estilos generales*/
 section{
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 section .informacion-section{
@@ -66,6 +67,46 @@ section .informacion-section{
   align-items: center;
 }
 
+/*margen en paginas nuevas*/
+.secciones{
+  margin-top: 140px;
+}
+
+/*Estilos a los title*/
+.title{
+  text-align: center;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.title::before{
+  content: " ";
+  position: absolute;
+  background-color: black;
+  width: 200px;
+  height: 4px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title::after{
+  position: absolute;
+  font-size: 16px;
+  padding: 0 5px;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.secciones .title::after{
+  content: "Conocenos";
+}
+.val-academico .title::after{
+  content: "Académicos";
+}
 /*Carousel imagenes*/
 .pie-carusel{
   background-color: rgba(252, 238, 206)!important;

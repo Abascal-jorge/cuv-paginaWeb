@@ -15,6 +15,14 @@ const FooterPie = styled.footer`
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media(max-width: 768px){
+            flex-direction: column;
+
+            .datos-universidad{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
     }
 
     .pie-info{
@@ -24,6 +32,7 @@ const FooterPie = styled.footer`
     }
 
     svg{
+        margin-left: 10px;
         font-size: 30px;
         cursor: pointer;
     }
@@ -36,7 +45,7 @@ const Footer = () => {
         <FooterPie>
             <div  className="contenedor">
                 <div className="sociales-footer">
-                    <div>
+                    <div className="datos-universidad">
                         <p>Centro Universitario de valladolid, Calle 49 No. 142-A Col. San Francisco</p>
                         <p>Valladolid, Yucatan, mexico</p>
                         <span>Clave SEP: 31PSU0034W</span>

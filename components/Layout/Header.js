@@ -7,7 +7,6 @@ const Navegacion = styled.header`
     position: fixed;
     width: 100%;
     background-color: rgba(252, 238, 206, .7);
-    border: 1px solid red;
     z-index: 10;
     
     .items-nav{
@@ -96,7 +95,6 @@ const Header = () => {
     const menuMovil = () => {
         const nav = document.querySelector("#nav-menu");
         const cerrar = document.querySelector(".items-nav i");
-        console.log(cerrar);
         const logo = document.querySelector(".logo");
         if( nav.classList.contains("active") ){
             nav.classList.remove("active");
@@ -132,13 +130,13 @@ const Header = () => {
                         <li><Link href="/nosotros">Nosotros</Link></li>
                         <li><Link href="#">Oferta Educativa</Link></li>
                         <li><Link href="#">Departamentos Esatudiantiles</Link></li>
-                        <li><Link href="#">Galería</Link></li>
+                        <li><Link href="/galeria">Galería</Link></li>
                         <li><Link href="#">Contacto</Link></li>
                     </ul>
                 </nav>
                 <i onClick={ menuMovil }>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                     </svg>
                 </i>
             </div>

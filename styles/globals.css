@@ -93,6 +93,7 @@ section .informacion-section{
 
 .title::after{
   position: absolute;
+  color: crimson;
   font-size: 16px;
   padding: 0 5px;
   bottom: -7px;

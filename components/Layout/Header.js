@@ -1,93 +1,6 @@
 import React, { useEffect } from 'react';
-import Link from 'next/link'
-import styled from "@emotion/styled";
-
-const Navegacion = styled.header`
-    letter-spacing: 1px;
-    position: fixed;
-    width: 100%;
-    background-color: rgba(252, 238, 206, .7);
-    z-index: 10;
-    
-    .items-nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-
-        .logo{
-            z-index: 10;
-            width: 100px;
-            height: 100px;
-            padding: 10px;
-        }
-
-        nav{
-            transition: all .2s ease-in-out;
-        }
-
-        nav ul{
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li{
-            list-style: none;
-            display: inline-block;
-        }
-
-        nav ul li a{
-            color: rgba(14, 47, 111);
-            display: block;
-            padding: 10px;
-            font-weight: bold;
-        }
-
-        i{
-            width: 30px;
-            height: 30px;
-            display: block;
-            margin-right: 10px;
-            z-index: 10;
-            display: none;
-        }
-
-        @media( max-width: 960px){
-            /*.logo.active p{
-                color: white;
-            }*/
-
-            nav{
-                position: absolute;
-                top: -800%;
-            }
-
-            i.active{
-                color: white;
-            }
-
-            nav.active{
-                text-align: center;
-                width: 100%;
-                height: 60vh;
-                margin: 0 -20px;
-                background-color: black;
-                color: white;
-                padding-top: 80px;
-                top: 0px;
-            } 
-
-            nav ul li{
-                display: block;
-            }
-
-            i{
-                display: block;
-            }
-        }
-
-    }
-`;
+import Link from 'next/link';
+import { Navegacion } from "./estilosLayout";
 
 const Header = () => {
 
@@ -122,16 +35,16 @@ const Header = () => {
         <Navegacion>
             <div className="items-nav contenedor">
                 <div className="logo">
-                    <img src="./logo_cuv.png"/>
+                    <Link href="/"><img src="./logo_cuv.png"/></Link>
                 </div>
                 <nav id="nav-menu">
                     <ul>
                         <li><Link href="/">Inicio</Link></li>
                         <li><Link href="/nosotros">Nosotros</Link></li>
                         <li><Link href="#">Oferta Educativa</Link></li>
-                        <li><Link href="#">Departamentos Esatudiantiles</Link></li>
+                        <li><Link href="/departamentos">Departamentos Esatudiantiles</Link></li>
                         <li><Link href="/galeria">Galería</Link></li>
-                        <li><Link href="#">Contacto</Link></li>
+                        <li><Link href="/contactanos">Contacto</Link></li>
                     </ul>
                 </nav>
                 <i onClick={ menuMovil }>

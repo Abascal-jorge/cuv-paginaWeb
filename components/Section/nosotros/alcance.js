@@ -1,57 +1,5 @@
 import React from 'react';
-import styled from "@emotion/styled";
-
-const ContenidoMision = styled.div`
-    .info{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-
-        div{
-            width: calc(50% - 20px);
-            padding: 20px;
-            img{
-                width: 100%;
-                border-radius: 16px;
-            }
-        }
-
-        p{
-            text-align: justify;
-        }
-        
-        .left{
-            order: -1;
-        }
-
-        @media (max-width: 950px){
-            div{
-                width: 100%;
-                padding: 20px;
-                img{
-                    width: 400px;
-                    height: 400px;
-                    object-fit: cover;
-                }
-            }
-            .imagen-nosotros{
-                text-align: center;
-            }
-            .left{
-                order: 2;
-            }
-        }
-        @media (max-width: 550px){
-            div{
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-    }
-`;
+import { ContenidoMision } from "./estilosNosotros";
 
 const Alcance = () => {
     return ( 

@@ -1,30 +1,7 @@
 import React from 'react';
-import styled from "@emotion/styled";
+import Link from "next/link";
+import { SectionInformacion } from "./estilosInformacion";
 import Slider from "./slider";
-
-const SectionInformacion = styled.section`
-    .informacion-section .column{
-        width: calc(50% - 10px);
-        padding: 10px;
-    }
-
-    .text-title{
-        letter-spacing: 1px;
-        padding: 10px;
-    }
-
-    .text-description{
-        letter-spacing: 1px;
-        padding: 10px 15px 10px 10px;
-        text-align: justify;
-    }
-
-    @media( max-width: 950px){
-        .informacion-section .column{
-            width: 100%;
-        }
-    }
-`;
 
 const Informacion = () => {
     return ( 
@@ -40,6 +17,61 @@ const Informacion = () => {
                         </p>
                     </div>
                     <Slider/>
+                </div>
+
+                <article>
+                    <h2>Noticias CUV</h2>
+                    <div className="card-noticias">
+                        <div className="card-noti-info">
+                            <div className="info-img">
+                                <img src="./cuv_foto.jpg"/>
+                            </div>
+                            <div className="info-noticia">
+                                <h3>Noticia</h3>
+                                <p className="descripcion-noti">Descipcion noticia corta</p>
+                                <Link href="/">LEER MÁS</Link>
+                            </div>
+                            <div className="info-fecha">
+                                <p >15 Febrero. 2021</p>
+                            </div>
+                        </div>
+                        <div className="card-noti-info">
+                            <div className="info-img">
+                                <img src="./cuv_foto.jpg"/>
+                            </div>
+                            <div className="info-noticia">
+                                <h3>Noticia</h3>
+                                <p className="descripcion-noti">Descipcion noticia corta</p>
+                                <Link href="/">LEER MÁS</Link>
+                            </div>
+                            <div className="info-fecha">
+                                <p >15 Febrero. 2021</p>
+                            </div>
+                        </div>
+                        <div className="card-noti-info">
+                            <div className="info-img">
+                                <img src="./cuv_foto.jpg"/>
+                            </div>
+                            <div className="info-noticia">
+                                <h3>Noticia</h3>
+                                <p className="descripcion-noti">Descipcion noticia corta</p>
+                                <Link href="/">LEER MÁS</Link>
+                            </div>
+                            <div className="info-fecha">
+                                <p >15 Febrero. 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="button-vermas">
+                        <button>Ver Mas Noticias</button>
+                    </div>
+                </article>
+
+                <div className="croquis">
+                    <h2 className="title">Croquis universitario</h2>
+                    <div className="imagen-croquis">
+                        <img src="/croqui.jpg"/>
+                    </div>
                 </div>
             </div>
         </SectionInformacion>

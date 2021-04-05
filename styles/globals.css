@@ -25,6 +25,10 @@ a {
   box-sizing: inherit;
 }
 
+h2{
+  text-align: center;
+}
+
 /*Estilos generales*/
 header.scrollActive{
   background-color: rgba(252, 238, 206);
@@ -107,6 +111,18 @@ section .informacion-section{
 }
 .val-academico .title::after{
   content: "Académicos";
+}
+
+.departamentos .title::after{
+  content: "Comodidad";
+}
+
+.croquis h2::after{
+  content: "Areas";
+}
+
+.contactanos .title::after{
+  content: "Datos";
 }
 /*Carousel imagenes*/
 .pie-carusel{

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from "@emotion/styled";
 //Material ui
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';

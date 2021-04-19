@@ -24,6 +24,7 @@ const UseDatosState = ( { children } ) => {
 
             const res = await axios( url );
 
+
             distpatch({
                 type: OBTENER_UNIVERSIDADES,
                 payload: res.data.licenciaturas
@@ -43,6 +44,8 @@ const UseDatosState = ( { children } ) => {
             const url = `${process.env.backendURL}/noticia`;
 
             const res = await axios( url );
+
+            console.log(res);
 
             distpatch({
                 type: OBTENER_NOTICIAS,

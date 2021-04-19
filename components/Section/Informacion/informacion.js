@@ -9,8 +9,6 @@ const Informacion = () => {
     const usedatoscontext = useContext(UseDatosContext);
     const { noticias } = usedatoscontext;
 
-
-
     return ( 
         <SectionInformacion>
             <div className="contenedor">

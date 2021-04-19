@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext }  from 'react';
 import Link from "next/link";
 import { SectionInformacion } from "./estilosInformacion";
 import Slider from "./slider";
+import UseDatosContext from "../../../context/useDatosContext";
 
 const Informacion = () => {
+
+    const usedatoscontext = useContext(UseDatosContext);
+    const { noticias } = usedatoscontext;
+
+
+
     return ( 
         <SectionInformacion>
             <div className="contenedor">
@@ -22,45 +29,22 @@ const Informacion = () => {
                 <article>
                     <h2>Noticias CUV</h2>
                     <div className="card-noticias">
-                        <div className="card-noti-info">
-                            <div className="info-img">
-                                <img src="./cuv_foto.jpg"/>
+                        { noticias && noticias.map( info => (
+                            <div className="card-noti-info">
+                                <div className="info-img">
+                                    <img src={info.imagen0}/>
+                                </div>
+                                <div className="info-noticia">
+                                    <h3>{info.titulo}</h3>
+                                    <p className="descripcion-noti">{info.descripcion}</p>
+                                    <Link href="/">LEER MÁS</Link>
+                                </div>
+                                <div className="info-fecha">
+                                    <p >{info.fecha.split("T")[0]}</p>
+                                </div>
                             </div>
-                            <div className="info-noticia">
-                                <h3>Noticia</h3>
-                                <p className="descripcion-noti">Descipcion noticia corta</p>
-                                <Link href="/">LEER MÁS</Link>
-                            </div>
-                            <div className="info-fecha">
-                                <p >15 Febrero. 2021</p>
-                            </div>
-                        </div>
-                        <div className="card-noti-info">
-                            <div className="info-img">
-                                <img src="./cuv_foto.jpg"/>
-                            </div>
-                            <div className="info-noticia">
-                                <h3>Noticia</h3>
-                                <p className="descripcion-noti">Descipcion noticia corta</p>
-                                <Link href="/">LEER MÁS</Link>
-                            </div>
-                            <div className="info-fecha">
-                                <p >15 Febrero. 2021</p>
-                            </div>
-                        </div>
-                        <div className="card-noti-info">
-                            <div className="info-img">
-                                <img src="./cuv_foto.jpg"/>
-                            </div>
-                            <div className="info-noticia">
-                                <h3>Noticia</h3>
-                                <p className="descripcion-noti">Descipcion noticia corta</p>
-                                <Link href="/">LEER MÁS</Link>
-                            </div>
-                            <div className="info-fecha">
-                                <p >15 Febrero. 2021</p>
-                            </div>
-                        </div>
+                        ))
+                        }   
                     </div>
                     <div className="button-vermas">
                         <button>Ver Mas Noticias</button>

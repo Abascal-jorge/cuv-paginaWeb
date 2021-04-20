@@ -35,7 +35,7 @@ const Informacion = () => {
                                 <div className="info-noticia">
                                     <h3>{info.titulo}</h3>
                                     <p className="descripcion-noti">{info.descripcion}</p>
-                                    <Link href="/">LEER MÁS</Link>
+                                    <Link href={`/noticias/${info._id}`}>LEER MÁS</Link>
                                 </div>
                                 <div className="info-fecha">
                                     <p >{info.fecha.split("T")[0]}</p>

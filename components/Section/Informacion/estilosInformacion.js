@@ -59,6 +59,8 @@ export const SectionInformacion = styled.section`
     }
 
     article .card-noti-info{
+        display: flex;
+        flex-direction: column;
         border-radius: 16px;
         border: 1px solid #eee;
         width: calc(33.33% - 10px);
@@ -67,12 +69,12 @@ export const SectionInformacion = styled.section`
     }
 
     .info-noticia{
+        flex: 1;
         padding: 20px;
     }
 
     .info-fecha{
         background-color: #eee;
-        margin-top: 40px;
         border-top: 1px solid #eee;
         padding: 0px 20px;
         border-bottom-left-radius: 16px;

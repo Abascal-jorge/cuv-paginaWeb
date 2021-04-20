@@ -45,8 +45,6 @@ const UseDatosState = ( { children } ) => {
 
             const res = await axios( url );
 
-            console.log(res);
-
             distpatch({
                 type: OBTENER_NOTICIAS,
                 payload: res.data.noticias

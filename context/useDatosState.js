@@ -3,13 +3,14 @@ import useDatosContext from "./useDatosContext";
 import useDatosReducer from "./useDatosReducer";
 import axios from 'axios';
 import { OBTENER_UNIVERSIDADES,
-    OBTENER_NOTICIAS } from "../type";
+         OBTENER_NOTICIAS,
+         NOTICIA_SELECCIONADA } from "../type";
 
 
 const UseDatosState = ( { children } ) => {
 
     const initialState = {
-        universidades: null,
+        licenciaturas: null,
         noticias: null,
         galeria: null
     }
@@ -57,17 +58,37 @@ const UseDatosState = ( { children } ) => {
 
     }
 
-    return (  
+    const obtenerNoticiaSeleccionada = async id => {
+
+        try {
+
+            const url = `${process.env.backendURL}?id=noticia`;
+
+            const res = await axios.get( url );
+
+            distpatch({
+                type: NOTICIA_SELECCIONADA,
+                payload: res
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
+    return (   
 
         <useDatosContext.Provider
             value= {
                 {
                     //Funciones y variables a compartir 
-                    universidades: state.licenciaturas,
+                    licenciaturas: state.licenciaturas,
                     noticias: state.noticias,
                     obtenerLicenciatura,
-                    obtenerNoticias
-                }
+                    obtenerNoticias,  
+                    obtenerNoticiaSeleccionada  
+               }
             }
         >
             { children }

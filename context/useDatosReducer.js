@@ -1,5 +1,6 @@
 import { OBTENER_UNIVERSIDADES,
-    OBTENER_NOTICIAS } from "../type";
+         OBTENER_NOTICIAS,
+         NOTICIA_SELECCIONADA } from "../type";
 
 const UseDatosReducer = ( state, action ) => {
     
@@ -7,7 +8,7 @@ const UseDatosReducer = ( state, action ) => {
         case OBTENER_UNIVERSIDADES:
             return {
                 ...state,
-                universidades: action.payload
+                licenciaturas: action.payload
             }
         case OBTENER_NOTICIAS:
             return{

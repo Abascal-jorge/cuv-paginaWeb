@@ -53,6 +53,10 @@ const Noticias = () => {
     const useDatosContext = useContext( UseDatosContext );
     const { obtenerNoticiaSeleccionada } = useDatosContext;
 
+    useEffect( async () => {
+        await obtenerNoticiaSeleccionada(id);
+    }, []);
+
     return ( 
         <Layout>
             <SectionNoticia className="contenedor">

@@ -62,14 +62,15 @@ const UseDatosState = ( { children } ) => {
 
         try {
 
-            const url = `${process.env.backendURL}?id=noticia`;
+            const url = `${process.env.backendURL}/noticia`;
 
-            const res = await axios.get( url );
-
-            distpatch({
-                type: NOTICIA_SELECCIONADA,
-                payload: res
+            const res = await axios.get( url , {
+                params: {
+                    id
+                }
             });
+
+            console.log( res );
 
         } catch (error) {
             console.log(error);

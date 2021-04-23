@@ -15,6 +15,11 @@ const UseDatosReducer = ( state, action ) => {
                 ...state,
                 noticias: action.payload
             }
+        case NOTICIA_SELECCIONADA:
+            return{
+                ...state,
+                noticiaActual: action.payload
+            }
         default:
             break;
     }

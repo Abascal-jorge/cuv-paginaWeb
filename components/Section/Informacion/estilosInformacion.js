@@ -45,20 +45,26 @@ export const SectionInformacion = styled.section`
         }
     }
 
-    article .info-img img{
+    @media( max-width: 950px){
+        .informacion-section .column{
+            width: 100%;
+        }
+    }
+`;
+
+export const CardNoticias = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+
+    .info-img img{
         width: 100%;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
     }
 
-    article .card-noticias{
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 10px;
-        row-gap: 20px;
-    }
-
-    article .card-noti-info{
+    .card-noti-info{
         display: flex;
         flex-direction: column;
         border-radius: 16px;
@@ -86,19 +92,13 @@ export const SectionInformacion = styled.section`
     }
 
     @media(max-width: 768px){
-        article .card-noti-info{
+        .card-noti-info{
             width: calc(50% - 10px);
          }
     }
 
     @media(max-width: 550px){
-        article .card-noti-info{
-            width: 100%;
-        }
-    }
-
-    @media( max-width: 950px){
-        .informacion-section .column{
+        .card-noti-info{
             width: 100%;
         }
     }

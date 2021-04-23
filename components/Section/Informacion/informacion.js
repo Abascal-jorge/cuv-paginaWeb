@@ -1,10 +1,13 @@
 import React, { useContext }  from 'react';
 import Link from "next/link";
-import { SectionInformacion } from "./estilosInformacion";
+import { SectionInformacion, CardNoticias } from "./estilosInformacion";
 import Slider from "./slider";
 import UseDatosContext from "../../../context/useDatosContext";
+import { useRouter } from 'next/router';
 
 const Informacion = () => {
+
+    const router = useRouter();
 
     const usedatoscontext = useContext(UseDatosContext);
     const { noticias } = usedatoscontext;
@@ -26,9 +29,12 @@ const Informacion = () => {
 
                 <article>
                     <h2>Noticias CUV</h2>
-                    <div className="card-noticias">
+                    <CardNoticias>
                         { noticias && noticias.map( info => (
-                            <div className="card-noti-info">
+                            <div 
+                                className="card-noti-info"
+                                key={ info._id }
+                            >
                                 <div className="info-img">
                                     <img src={info.imagen0}/>
                                 </div>
@@ -43,9 +49,9 @@ const Informacion = () => {
                             </div>
                         ))
                         }   
-                    </div>
+                    </CardNoticias>
                     <div className="button-vermas">
-                        <button>Ver Mas Noticias</button>
+                        <button onClick={ () => router.push("/cuvnoticia") } >Mas noticias</button>
                     </div>
                 </article>
 

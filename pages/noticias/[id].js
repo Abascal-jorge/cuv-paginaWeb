@@ -49,29 +49,32 @@ const Noticias = () => {
     const router = useRouter();
 
     const { query: { id } } = router;
-
     const useDatosContext = useContext( UseDatosContext );
-    const { obtenerNoticiaSeleccionada } = useDatosContext;
+    const { obtenerNoticiaSeleccionada, noticiaActual } = useDatosContext;
 
     useEffect( async () => {
         await obtenerNoticiaSeleccionada(id);
     }, []);
-
+    
     return ( 
         <Layout>
             <SectionNoticia className="contenedor">
-                <h2>Centro Universitario de Valladolid - Realizan en el CUV Foro Día Internacional de la Mujer</h2>
-                <div className="noticia">
-                    <div className="img-noticia">
-                        <img src="./nosotros"/>
-                    </div>
-                    <div className="datos-noticia">
-                        <p>
-                        En el Centro Universitario de Valladolid se realizó el 1er. Foro Educativo “Grandes Mujeres, Grandes Historias” en el marco de las actividades alusivas al Día Internacional de la Mujer, donde participaron alumnos de la Secundaria Deportiva CUV y del Bachillerato Tecnológico Francisco de Montejo, con el objetivo de propiciar espacios de reflexión sobre la importancia de la mujer como influyente histórico en el país, también se realizó la entrega de reconocimientos a los ganadores del concurso The Woman Flyer que se efectuó en días anteriores quedando en primer lugar las alumnas Pilar de Jesús Chicmul Pérez y Georgina Belén Perera Medina.
-                        </p>
-                        <p className="fecha">Fecha de la noticia</p>
-                    </div>
-                </div>
+                {noticiaActual && 
+                    <>
+                        <h2> { noticiaActual.titulo } </h2>
+                        <div className="noticia">
+                                <div className="img-noticia">
+                                    <img src={noticiaActual.imagen0}/>
+                                </div>
+                                <div className="datos-noticia">
+                                    <p>
+                                        { noticiaActual.noticia }
+                                    </p>
+                                    <p className="fecha"> { noticiaActual.fecha }</p>
+                                </div>
+                        </div>
+                    </>
+                }
             </SectionNoticia>
         </Layout>
      );

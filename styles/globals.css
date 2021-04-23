@@ -74,6 +74,7 @@ section .informacion-section{
 /*margen en paginas nuevas*/
 .secciones{
   margin-top: 140px;
+  margin-bottom: 20px;
 }
 
 /*Estilos a los title*/

@@ -41,7 +41,15 @@ const Header = () => {
                     <ul>
                         <li><Link href="/">Inicio</Link></li>
                         <li><Link href="/nosotros">Nosotros</Link></li>
-                        <li><Link href="#">Oferta Educativa</Link></li>
+                        <li className="principal-leve">
+                            <Link href="#">Oferta Educativa</Link>
+                            <ul className="next-leve">
+                                <li><Link href="/licenciatura">Licenciatura</Link></li>
+                                <li><Link href="/">Maestria</Link></li>
+                                <li><Link href="/">Preparatoria</Link></li>
+                                <li><Link href="/">Secundaria</Link></li>
+                            </ul>
+                        </li>
                         <li><Link href="/departamentos">Departamentos Esatudiantiles</Link></li>
                         <li><Link href="/galeria">Galería</Link></li>
                         <li><Link href="/contactanos">Contacto</Link></li>

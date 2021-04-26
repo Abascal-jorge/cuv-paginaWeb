@@ -53,6 +53,32 @@ export const Navegacion = styled.header`
             display: none;
         }
 
+        /* Estilos para el nuevo menu complemento */
+
+        .principal-leve{
+            position: relative;
+
+            &:hover ul{
+                display: block;
+            }
+        }
+
+        .next-leve{
+            display: none;
+            width: 100%; 
+            position: absolute;
+            background-color: burlywood;
+            text-align: center;
+            li{ 
+                display: inline;
+                a{
+                    &:hover{
+                        background-color: red;
+                    }
+                }
+            }
+        }
+
         @media( max-width: 960px){
             /*.logo.active p{
                 color: white;

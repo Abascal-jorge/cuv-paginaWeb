@@ -41,6 +41,26 @@ const SectionNoticia = styled.section`
         }
     }
 
+    .info-extra{
+        padding: 5px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));
+        justify-content: center;
+        column-gap: 10px;
+        row-gap: 10px;
+        div{
+            p{
+                text-transform: capitalize;
+                text-align: center;
+            }
+            img{
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+
 
 `;
 
@@ -64,14 +84,28 @@ const Noticias = () => {
                         <h2> { noticiaActual.titulo } </h2>
                         <div className="noticia">
                                 <div className="img-noticia">
-                                    <img src={noticiaActual.imagen0}/>
+                                    <img src={noticiaActual.imagen0}  alt= { noticiaActual.tituloimagen0}/>
                                 </div>
                                 <div className="datos-noticia">
                                     <p>
                                         { noticiaActual.noticia }
                                     </p>
-                                    <p className="fecha"> { noticiaActual.fecha }</p>
+                                    <p className="fecha"> { `Fecha Publicación: ${noticiaActual.fecha.split("T")[0]}` }</p>
                                 </div>
+                        </div>
+                        <div className="info-extra">
+                            <div>
+                                <img src={ noticiaActual.imagen1 } />
+                                <p> { noticiaActual.tituloimagen1 } </p>
+                            </div>
+                            <div>
+                                <img src={ noticiaActual.imagen2 } />
+                                <p> { noticiaActual.tituloimagen2 } </p>
+                            </div>
+                            <div>
+                                <img src={ noticiaActual.imagen3 } />
+                                <p> { noticiaActual.tituloimagen3 } </p>
+                            </div>
                         </div>
                     </>
                 }

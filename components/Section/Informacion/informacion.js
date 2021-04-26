@@ -11,6 +11,22 @@ const Informacion = () => {
 
     const usedatoscontext = useContext(UseDatosContext);
     const { noticias } = usedatoscontext;
+    let principales = [];
+
+    const principalesNoticias = () => {
+        noticias.reverse();
+        for( let i=0; i < noticias.length; i++){
+            principales.push( noticias[i] );
+            if( i === 2 ){
+                break;
+            }
+        }
+        console.log( principales );
+    }
+
+    if( noticias ){
+        principalesNoticias();
+    }
 
     return ( 
         <SectionInformacion>
@@ -30,7 +46,7 @@ const Informacion = () => {
                 <article>
                     <h2>Noticias CUV</h2>
                     <CardNoticias>
-                        { noticias && noticias.map( info => (
+                        { noticias && principales.map( info => (
                             <div 
                                 className="card-noti-info"
                                 key={ info._id }

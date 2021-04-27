@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from "../components/Layout/layout";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 const ContenidoPrincipal = styled.div`
     display: flex;
@@ -17,6 +18,27 @@ const ContenidoPrincipal = styled.div`
     }
 `;
 
+const CardSetion = styled.div`
+
+    h2{
+        margin-top: 40px;
+        padding-top: 10px;
+        border-top: 2px solid #eee;
+    }
+
+    .card-licenciaturas{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    .card{
+        border: 1px solid #eee;
+    }
+`;
+
 const Licenciatura = () => {
     return ( 
         <Layout>    
@@ -27,6 +49,7 @@ const Licenciatura = () => {
                         <img src="./cuv_foto.jpg"/>
                     </div>
                     <div>
+                        <h3>Oferta Educativa</h3>
                         <p>El Centro Universitario Valladolid ofrece un total de 22 Licenciaturas de 7 áreas: 
                         Investigación y Ciencias Jurídicas, Diseño y Comunicación, Ingeniería y Tecnologías, Educación, Economía y Administración, Turismo y Salud.
                         Es una de las mejores opciones de Licenciatura en la Ciudad de Valladolid.</p>
@@ -59,12 +82,70 @@ const Licenciatura = () => {
                             </ul>
                         </div>
                 </div>
-                <div>
-                    <h3>Salud</h3>
-                    <div>
-
+                <CardSetion>
+                    <h2>Salud</h2>
+                    <div className="card-licenciaturas">
+                        <div className="card">
+                            <div>
+                                <img src="./logo_cuv.png"/>
+                            </div>
+                            <div>
+                                <h3>Licenciatura en nutricion</h3>
+                                <Link href="/">Leer mas...</Link>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <div>
+                                <img src="./logo_cuv.png"/>
+                            </div>
+                            <div>
+                                <h3>Licenciatura en nutricion</h3>
+                                <Link href="/">Leer mas...</Link>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <div>
+                                <img src="./logo_cuv.png"/>
+                            </div>
+                            <div>
+                                <h3>Licenciatura en nutricion</h3>
+                                <Link href="/">Leer mas...</Link>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </CardSetion>
+                <CardSetion>
+                    <h2>Salud</h2>
+                    <div className="card-licenciaturas">
+                        <div className="card">
+                            <div>
+                                <img src="./logo_cuv.png"/>
+                            </div>
+                            <div>
+                                <h3>Licenciatura en nutricion</h3>
+                                <Link href="/">Leer mas...</Link>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <div>
+                                <img src="./logo_cuv.png"/>
+                            </div>
+                            <div>
+                                <h3>Licenciatura en nutricion</h3>
+                                <Link href="/">Leer mas...</Link>
+                            </div>
+                        </div>
+                        <div className="card">
+                            <div>
+                                <img src="./logo_cuv.png"/>
+                            </div>
+                            <div>
+                                <h3>Licenciatura en nutricion</h3>
+                                <Link href="/">Leer mas...</Link>
+                            </div>
+                        </div>
+                    </div>
+                </CardSetion>
             </section>
         </Layout>
      );

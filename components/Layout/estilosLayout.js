@@ -89,6 +89,12 @@ export const Navegacion = styled.header`
                 top: -800%;
             }
 
+            .principal-leve{
+                &:hover{
+                    margin-bottom: 40px;
+                }
+            }
+
             i.active{
                 color: white;
             }

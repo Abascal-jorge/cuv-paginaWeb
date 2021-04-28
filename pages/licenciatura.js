@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useContext} from 'react';
 import Layout from "../components/Layout/layout";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import useDatosContext from "../context/useDatosContext";
+import UseDatosContext from '../context/useDatosContext';
 
 const ContenidoPrincipal = styled.div`
     display: flex;
@@ -35,11 +37,69 @@ const CardSetion = styled.div`
     }
 
     .card{
+        height: 450px;
         border: 1px solid #eee;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        .card-img{
+            img{
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+
+        .card-info{
+            padding: 10px;
+            text-align: center;
+            h3{
+               
+            }
+            a{
+                color: blue;
+                font-weight: 700;
+            }
+        }
+    }
+`;
+
+const InfoUniversidad = styled.div`
+    .pregunta{
+        padding: 10px 0;
+        color: blue;
+    }
+
+    p{
+        text-align: justify;
     }
 `;
 
 const Licenciatura = () => {
+
+    const usedatoscontext = useContext( UseDatosContext );
+    const { licenciaturas, obtenerLicenciatura } = usedatoscontext;
+    let areas = [];
+
+    useEffect(async () => {
+        if( !licenciaturas ){
+            await obtenerLicenciatura();
+        }
+    }, [ licenciaturas ]);
+
+    const llenandoAreas = () => {
+        if( licenciaturas){
+            areas = licenciaturas.reduce( ( acc, valor ) => {
+                if( !acc.includes(valor.area) ){
+                    acc.push(valor.area);
+                }
+                return acc;
+            },[]);
+        }
+        console.log(areas);
+    }
+
     return ( 
         <Layout>    
             <section className="secciones contenedor">
@@ -55,8 +115,8 @@ const Licenciatura = () => {
                         Es una de las mejores opciones de Licenciatura en la Ciudad de Valladolid.</p>
                     </div>
                 </ContenidoPrincipal>
-                <div>
-                        <p>¿Cómo es posible que en tan solo tres años se pueda concluir el programa de Licenciatura?</p>
+                <InfoUniversidad>
+                        <p className="pregunta">¿Cómo es posible que en tan solo tres años se pueda concluir el programa de Licenciatura?</p>
                         <p>
                         El año escolar está dividido en tres cuatrimestres: de Septiembre a Diciembre, de Enero a Abril, 
                         y de Mayo a Agosto. Cada cuatrimestre consta de 14 semanas de clase y una de exámenes finales. 
@@ -64,13 +124,13 @@ const Licenciatura = () => {
                         formación sin reducir la carga académica y sin menoscabo alguno a la calidad educativa.
                         </p>
 
-                        <p>¿Esto significa que el estudiante no tiene vacaciones en este periodo?</p>
+                        <p className="pregunta">¿Esto significa que el estudiante no tiene vacaciones en este periodo?</p>
                         <p>                            
                         El plan de estudios contempla un corto periodo de vacaciones dentro de su candelario al término de cada cuatrimestre.
                         </p>
 
                         <div>
-                            <p>Requisitos de inscripcion</p>
+                            <p className="pregunta">Requisitos de inscripcion</p>
                             <ul>
                                 <li>LLenar solicitud de inscripción</li>
                                 <li>Certificado o constancia de Preparatoria (Original y 2 copias)</li>
@@ -81,71 +141,31 @@ const Licenciatura = () => {
                                 <li>Cubrir cuota de inscripción</li>
                             </ul>
                         </div>
-                </div>
-                <CardSetion>
-                    <h2>Salud</h2>
-                    <div className="card-licenciaturas">
-                        <div className="card">
-                            <div>
-                                <img src="./logo_cuv.png"/>
-                            </div>
-                            <div>
-                                <h3>Licenciatura en nutricion</h3>
-                                <Link href="/">Leer mas...</Link>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div>
-                                <img src="./logo_cuv.png"/>
-                            </div>
-                            <div>
-                                <h3>Licenciatura en nutricion</h3>
-                                <Link href="/">Leer mas...</Link>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div>
-                                <img src="./logo_cuv.png"/>
-                            </div>
-                            <div>
-                                <h3>Licenciatura en nutricion</h3>
-                                <Link href="/">Leer mas...</Link>
-                            </div>
-                        </div>
-                    </div>
-                </CardSetion>
-                <CardSetion>
-                    <h2>Salud</h2>
-                    <div className="card-licenciaturas">
-                        <div className="card">
-                            <div>
-                                <img src="./logo_cuv.png"/>
-                            </div>
-                            <div>
-                                <h3>Licenciatura en nutricion</h3>
-                                <Link href="/">Leer mas...</Link>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div>
-                                <img src="./logo_cuv.png"/>
-                            </div>
-                            <div>
-                                <h3>Licenciatura en nutricion</h3>
-                                <Link href="/">Leer mas...</Link>
-                            </div>
-                        </div>
-                        <div className="card">
-                            <div>
-                                <img src="./logo_cuv.png"/>
-                            </div>
-                            <div>
-                                <h3>Licenciatura en nutricion</h3>
-                                <Link href="/">Leer mas...</Link>
-                            </div>
-                        </div>
-                    </div>
-                </CardSetion>
+                </InfoUniversidad>
+                    { licenciaturas &&
+                        llenandoAreas(),
+                        areas.map( ( area ) => (
+                            <CardSetion>
+                                <h2>{area}</h2>
+                                <div className="card-licenciaturas">
+                                    { 
+                                        licenciaturas.map( ( lic ) => lic.area === area && (
+                                                <div className="card">
+                                                    <div className="card-img">
+                                                        <img src={lic.imagen}/>
+                                                    </div>
+                                                    <div className="card-info">
+                                                        <h3>{`Licenciatura en ${lic.licenciatura}`}</h3>
+                                                        <Link href="/">Leer mas...</Link>
+                                                    </div>
+                                                </div>
+                                        ))
+                                    }
+                                </div>
+                            </CardSetion>
+                        ))
+    
+                    }
             </section>
         </Layout>
      );

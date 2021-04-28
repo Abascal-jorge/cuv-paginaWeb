@@ -45,9 +45,7 @@ const Header = () => {
                             <Link href="#">Oferta Educativa</Link>
                             <ul className="next-leve">
                                 <li><Link href="/licenciatura">Licenciatura</Link></li>
-                                <li><Link href="/">Maestria</Link></li>
-                                <li><Link href="/">Preparatoria</Link></li>
-                                <li><Link href="/">Secundaria</Link></li>
+                                
                             </ul>
                         </li>
                         <li><Link href="/departamentos">Departamentos Esatudiantiles</Link></li>
@@ -66,3 +64,9 @@ const Header = () => {
 }
  
 export default Header;
+
+/*
+<li><Link href="/">Maestria</Link></li>
+                                <li><Link href="/">Preparatoria</Link></li>
+                                <li><Link href="/">Secundaria</Link></li>
+*/

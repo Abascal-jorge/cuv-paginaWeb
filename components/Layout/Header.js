@@ -35,7 +35,7 @@ const Header = () => {
         <Navegacion>
             <div className="items-nav contenedor">
                 <div className="logo">
-                    <Link href="/"><img src="./logo_cuv.png"/></Link>
+                    <Link href="/"><img src=".././logo_cuv.png"/></Link>
                 </div>
                 <nav id="nav-menu">
                     <ul>

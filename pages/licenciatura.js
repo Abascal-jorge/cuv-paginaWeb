@@ -3,7 +3,7 @@ import Layout from "../components/Layout/layout";
 import Link from "next/link";
 import UseDatosContext from '../context/useDatosContext';
 import { ContenidoPrincipal, CardSetion, InfoUniversidad } from "../components/Section/estilosLicenciatura"; 
-import WOW from 'wowjs';
+import WOW from "wowjs";
 
 const Licenciatura = () => {
 
@@ -15,6 +15,7 @@ const Licenciatura = () => {
         if( !licenciaturas ){
             await obtenerLicenciatura();
         }
+        new WOW.WOW().init();
     }, [ licenciaturas ]);
 
     const llenandoAreas = () => {
@@ -79,7 +80,7 @@ const Licenciatura = () => {
                                 <div className="card-licenciaturas">
                                     { 
                                         licenciaturas.map( ( lic ) => lic.area === area && (
-                                                <div className="card wow slideInLeft " data-wow-duration="2s" data-wow-delay="5s">
+                                                <div className="card wow flipInY" data-wow-duration="2s" data-wow-delay="0">
                                                     <div className="card-img">
                                                         <img src={lic.imagen}/>
                                                     </div>

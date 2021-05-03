@@ -15,7 +15,6 @@ const Licenciatura = () => {
         if( !licenciaturas ){
             await obtenerLicenciatura();
         }
-        WOW().init();
     }, [ licenciaturas ]);
 
     const llenandoAreas = () => {

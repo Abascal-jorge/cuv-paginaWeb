@@ -31,4 +31,8 @@ export const FooterPie = styled.footer`
         font-size: 30px;
         cursor: pointer;
     }
+
+    @media(max-width: 990px){
+        font-size: 14px;
+    }
 `;

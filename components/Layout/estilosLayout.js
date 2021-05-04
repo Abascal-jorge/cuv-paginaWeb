@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Navegacion = styled.header`
-    letter-spacing: 1px;
     position: fixed;
     width: 100%;
     background-color: rgba(252, 238, 206, .7);
@@ -79,14 +78,11 @@ export const Navegacion = styled.header`
             }
         }
 
-        @media( max-width: 960px){
-            /*.logo.active p{
-                color: white;
-            }*/
-
+        @media( max-width: 990px){
             nav{
                 position: absolute;
                 top: -800%;
+                font-size: 14px;
             }
 
             .principal-leve{
@@ -99,10 +95,14 @@ export const Navegacion = styled.header`
                 color: white;
             }
 
+            nav{
+                width: 100%;
+            }
+
             nav.active{
                 text-align: center;
                 width: 100%;
-                height: 60vh;
+                height: 100vh;
                 margin: 0 -20px;
                 background-color: black;
                 color: white;
@@ -123,7 +123,6 @@ export const Navegacion = styled.header`
 `;
 
 export const BannerPrincipal = styled.div`
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,15 +131,17 @@ export const BannerPrincipal = styled.div`
     background-position: center;
     background-size: cover;
     height: 80vh;
-    //margin-top: -6%;
 
     .contenedor div{
         color: rgba(14, 47, 111);
         letter-spacing: 1px;
-        font-weight: bold;
         border-radius: 16px;
         padding: 15px;
         background-color: rgba(191, 125, 47, .6);
+        p{
+            font-weight: 700;
+            font-size: 25px;
+        }
     }
 
     .contenedor div button{
@@ -151,12 +152,38 @@ export const BannerPrincipal = styled.div`
         border: 2px solid crimson;
         background-color: crimson;
         letter-spacing: 1px;
-        font-weight: bold;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
         &:hover{
             background: none;
+            font-weight: 700;
             color: rgba(14, 47, 111);
         }
     }
     
+    @media( max-width: 990px){
+        .contenedor div{
+            p{
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+
+        .contenedor div button{
+            font-size: 14px;
+            &:hover{
+                background: none;
+                font-weight: 700;
+                color: rgba(14, 47, 111);
+            }
+        }
+    }
+
+    @media( max-width: 440px){
+        .contenedor div{
+            margin-top: 70px;
+        }
+    }
 `;
 

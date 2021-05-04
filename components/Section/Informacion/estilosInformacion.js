@@ -17,11 +17,13 @@ export const SectionInformacion = styled.section`
         text-align: justify;
     }
 
+    /*Parte css croquis img*/
     .croquis .imagen-croquis img{
         width: 100%;
         object-fit: cover;
     }
 
+    /* Parte de css para las tarjetas de noticias */
     article{
         margin-top: 20px;
         padding: 10px;
@@ -34,20 +36,27 @@ export const SectionInformacion = styled.section`
     article .button-vermas button{
         border: 1px solid #222;
         outline: none;
-        appearance: none;
+        appearance: blue;
         background: none;
         border-radius: 16px;
         padding: 10px 20px;
         margin-top: 20px;
-
+        font-size: 16px;
+        font-family: "Poppins", sans-serif;
         &:hover{
             background-color: #eee;
         }
     }
 
-    @media( max-width: 950px){
+    /* Media en general */
+
+    @media( max-width: 990px){
         .informacion-section .column{
             width: 100%;
+        }
+
+        .text-description{
+            font-size: 14px;
         }
     }
 `;
@@ -77,6 +86,10 @@ export const CardNoticias = styled.div`
     .info-noticia{
         flex: 1;
         padding: 20px;
+        a{
+            color: blue;
+            letter-spacing: 1px;
+        }
     }
 
     .info-fecha{
@@ -88,6 +101,26 @@ export const CardNoticias = styled.div`
         p{
             margin: 0;
             padding: 10px 0;
+        }
+    }
+
+    @media(max-width: 990px) {
+        .info-noticia{
+            h3{
+                font-size: 16px;
+            }
+            p{
+                font-size: 14px;
+            }
+            a{
+                font-size: 14px;
+            }
+        }
+
+        .info-fecha{
+            p{
+                font-size: 14px;
+            }
         }
     }
 
